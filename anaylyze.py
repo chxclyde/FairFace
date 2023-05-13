@@ -4,7 +4,7 @@ import shutil
 import os
 
 # Load the data
-label = pd.read_csv("fairface_label_val.csv")
+label = pd.read_csv("labels/fairface_label_val.csv")
 predict = pd.read_csv("val_predict_outputs.csv")
 
 # Merge two DataFrames based on image file name
@@ -16,7 +16,7 @@ genders = df['gender_x'].unique().tolist()
 
 # Move images to corresponding folders
 for index, row in df.iterrows():
-    source_path = row['file']
+    source_path = os.path.join( "fairface-img-margin025-trainval",row['file'])
     target_folder = os.path.join('results', row['race_x'] +"_"+ row['gender_x'])
     
     # Create 'correct' and 'wrong' folders if they do not exist

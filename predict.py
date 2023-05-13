@@ -213,10 +213,10 @@ if __name__ == "__main__":
     dlib.DLIB_USE_CUDA = True
     print("using CUDA?: %s" % dlib.DLIB_USE_CUDA)
     args = parser.parse_args()
-    SAVE_DETECTED_AT = "detected_faces"
+    SAVE_DETECTED_AT = "fairface-img-margin025-trainval/val"
     ensure_dir(SAVE_DETECTED_AT)
     imgs = pd.read_csv(args.input_csv)['img_path']
     # detect_face(imgs, SAVE_DETECTED_AT)
     # print("detected faces are saved at ", SAVE_DETECTED_AT)
     #Please change test_outputs.csv to actual name of output csv. 
-    predidct_age_gender_race("test_outputs.csv", "val")
+    predidct_age_gender_race("val_predict_outputs.csv", "fairface-img-margin025-trainval/val")
