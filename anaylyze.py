@@ -17,7 +17,7 @@ genders = df['gender_x'].unique().tolist()
 # Move images to corresponding folders
 for index, row in df.iterrows():
     source_path = os.path.join( "fairface-img-margin025-trainval",row['file'])
-    target_folder = os.path.join('results', row['race_x'] +"_"+ row['gender_x'])
+    target_folder = os.path.join('results', row['race_x'] +"+"+ row['gender_x'])
     
     # Create 'correct' and 'wrong' folders if they do not exist
     correct_folder = os.path.join(target_folder, 'correct')
