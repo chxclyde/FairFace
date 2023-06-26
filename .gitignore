@@ -3,3 +3,4 @@ fairface-img-margin025-trainval/
 env/
 classify_results/
 biased_train_dataset/
+mydataset/
